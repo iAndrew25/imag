@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useRecoilValue, useRecoilState} from 'recoil';
 
-import Product from '../../components/product';
+import Product from '../../components/product/product';
 
 import {featuredState, cartState} from '../../../confg/store/atoms';
 
