@@ -2,18 +2,22 @@ import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { RecoilRoot } from 'recoil';
+import { Router, Link } from "@reach/router";
 
 import Header from './commons/containers/header/header';
-import Categories from './commons/containers/categories/categories';
-import Featured from './commons/containers/featured/featured';
+
+import Home from './pages/home/home';
+import Search from './pages/search/search';
 
 function App() {
 	return (
 		<Fragment>
 			<Header />
 			<AppContainer>
-				<Categories />
-				<Featured />
+				<Router>
+					<Home path="/" />
+					<Search path="/search/:queryParams" />
+				</Router>
 			</AppContainer>
 		</Fragment>
 	);
@@ -30,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
 
 const AppContainer = styled.section`
 	display: flex;
-	flex-direction: row;
 	width: 1024px;
 	margin: auto;
 `;

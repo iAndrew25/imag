@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useRecoilValue} from 'recoil';
+import { Link } from "@reach/router";
 
 import {categoriesState} from '../../../confg/store/atoms';
 
@@ -11,7 +12,7 @@ function Categories() {
 		<CategoriesContainer>
 			<h3>Categories</h3>
 			<ul>
-				{categories.map(category => <li>{category.name}</li>)}
+				{categories.map(({name}) => <li><Link to={`search/category=${name}`}>{name}</Link></li>)}
 			</ul>
 		</CategoriesContainer>
 	);
